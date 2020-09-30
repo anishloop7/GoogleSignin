@@ -45,7 +45,7 @@ Future<FirebaseUser> _signIn(BuildContext context) async {
       idToken: googleAuth.idToken,
     );
 
-  FirebaseUser userDetails = await _firebaseAuth.signInWithCredential(credential);
+  FirebaseUser userDetails = await _firebaseAuth.signInWithCredential(credential).user;
   ProviderDetails providerInfo = new ProviderDetails(userDetails.providerId);
 
 List<ProviderDetails> providerData = new List<ProviderDetails>();
